@@ -7,7 +7,8 @@ import (
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	currentTime := time.Now().Format(time.RFC850)
+	now := time.Now().Add(time.Hour * 24)
+	currentTime := now.Format(time.RFC850)
 	fmt.Fprintf(w, currentTime)
 }
 
